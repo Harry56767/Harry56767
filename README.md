@@ -168,14 +168,14 @@
 
             parties.forEach(function(party) {
                 const listItem = document.createElement("li");
-                listItem.innerHTML = `<strong>${party.name}</strong> - Leader: ${party.leader}<br><img src="${party.img}" alt="${party.leader}" class="leader-img">`;
+                listItem.innerHTML = <strong>${party.name}</strong> - Leader: ${party.leader}<br><img src="${party.img}" alt="${party.leader}" class="leader-img">;
                 partyList.appendChild(listItem);
             });
 
             function showPartyLeader(partyName) {
                 const party = parties.find(p => p.name === partyName);
                 if (party) {
-                    alert(`The leader of ${party.name} is ${party.leader}`);
+                    alert(The leader of ${party.name} is ${party.leader});
                 } else {
                     alert("Party not found.");
                 }
