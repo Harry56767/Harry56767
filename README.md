@@ -52,6 +52,96 @@
             height: auto;
             display: block;
             margin: 1rem 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .leader-img:hover {
+            transform: scale(1.1);
+        }
+
+        .graphics {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .graphics img {
+            width: 150px;
+            height: auto;
+            margin: 0 1rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .graphics img:hover {
+            opacity: 1;
+        }
+
+        h2 {
+            color: #4CAF50;
+            transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        h2:hover {
+            color: #FF5722;
+            transform: translateX(10px);
+        }
+
+        #structure h2 {
+            color: #2196F3;
+        }
+
+        #structure h2:hover {
+            color: #FFC107;
+        }
+
+        #parties h2 {
+            color: #9C27B0;
+        }
+
+        #parties h2:hover {
+            color: #E91E63;
+        }
+
+        #media h2 {
+            color: #00BCD4;
+        }
+
+        #media h2:hover {
+            color: #FF9800;
+        }
+
+        #elections h2 {
+            color: #FF5722;
+        }
+
+        #elections h2:hover {
+            color: #4CAF50;
+        }
+
+        #judiciary h2 {
+            color: #673AB7;
+        }
+
+        #judiciary h2:hover {
+            color: #CDDC39;
+        }
+
+        #issues h2 {
+            color: #FFC107;
+        }
+
+        #issues h2:hover {
+            color: #2196F3;
+        }
+
+        #corruption h2 {
+            color: #E91E63;
+        }
+
+        #corruption h2:hover {
+            color: #00BCD4;
         }
     </style>
     <script>
@@ -78,14 +168,14 @@
 
             parties.forEach(function(party) {
                 const listItem = document.createElement("li");
-                listItem.innerHTML = <strong>${party.name}</strong> - Leader: ${party.leader}<br><img src="${party.img}" alt="${party.leader}" class="leader-img">;
+                listItem.innerHTML = `<strong>${party.name}</strong> - Leader: ${party.leader}<br><img src="${party.img}" alt="${party.leader}" class="leader-img">`;
                 partyList.appendChild(listItem);
             });
 
             function showPartyLeader(partyName) {
                 const party = parties.find(p => p.name === partyName);
                 if (party) {
-                    alert(The leader of ${party.name} is ${party.leader});
+                    alert(`The leader of ${party.name} is ${party.leader}`);
                 } else {
                     alert("Party not found.");
                 }
@@ -124,7 +214,7 @@
         <section id="structure">
             <h2>Structure</h2>
             <p>The political system of India is structured into three main branches: Executive, Legislative, and Judiciary. The Executive branch is headed by the President, the Legislative branch is a bicameral Parliament, and the Judiciary is an independent body.</p>
-            <img src="https://gkindiatoday.com/wp-content/uploads/2018/07/Indian-political-parties.jpg" alt="Political Structure of India">
+            <img src="https://gkindiatoday.com/wp-content/uploads/2018/07/Indian-political-parties.jpg" alt="Political Structure of India" class="leader-img">
         </section>
         <section id="parties">
             <h2>Major Parties</h2>
@@ -152,8 +242,12 @@
             <p>Corruption is a significant issue in Indian politics, affecting various levels of government. Efforts to combat corruption include legislation, anti-corruption bodies, and public awareness campaigns.</p>
         </section>
     </main>
+    <div class="graphics">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/1920px-Flag_of_India.svg.png" alt="Flag of India">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Emblem_of_India_%28without_motto%29.svg/1200px-Emblem_of_India_%28without_motto%29.svg.png" alt="Emblem of India">
+    </div>
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <p>&copy; 2024 Jashandeep and Gurleen</p>
     </footer>
 </body>
 </html>
